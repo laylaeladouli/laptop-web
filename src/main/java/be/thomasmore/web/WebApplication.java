@@ -1,13 +1,13 @@
-package be.thomasmore.party;
+package be.thomasmore.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PartyApplication {
+public class WebApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PartyApplication.class, args);
+        SpringApplication.run(WebApplication.class, args);
     }
 
 }

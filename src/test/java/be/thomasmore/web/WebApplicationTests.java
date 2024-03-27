@@ -1,10 +1,10 @@
-package be.thomasmore.party;
+package be.thomasmore.web;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PartyApplicationTests {
+class WebApplicationTests {
 
     @Test
     void contextLoads() {
