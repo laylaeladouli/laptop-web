@@ -1,4 +1,4 @@
-package be.thomasmore.web;
+package be.layla.laptop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

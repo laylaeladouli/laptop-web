@@ -1,4 +1,4 @@
-package be.thomasmore.web.controllers;
+package be.layla.laptop.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
