@@ -12,6 +12,7 @@ public class Laptop {
 
     @Id
     private Integer id;
+    private String title;
     private String brandName;
     private String modelName;
     private String color;
@@ -23,9 +24,10 @@ public class Laptop {
     private String feature;
     private String graphic;
     private BigDecimal price;
+    private String imgUrl;
+    private String linkWeb;
     @Lob
     private String description;
-    private String imageFileName;
 
     public Laptop() {
     }
@@ -36,6 +38,14 @@ public class Laptop {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getBrandName() {
@@ -134,11 +144,19 @@ public class Laptop {
         this.description = description;
     }
 
-    public String getImageFileName() {
-        return imageFileName;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setImageFileName(String imageFileName) {
-        this.imageFileName = imageFileName;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public String getLinkWeb() {
+        return linkWeb;
+    }
+
+    public void setLinkWeb(String linkWeb) {
+        this.linkWeb = linkWeb;
     }
 }
