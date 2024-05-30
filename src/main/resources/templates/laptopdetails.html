@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"/>
+
+    <title>laptop</title>
+</head>
+
+<body>
+<div th:replace="~{fragments/header :: header}">Header</div>
+
+<div class="container">
+    <div class="containercontent" th:if="${laptop}">
+        <div class="prevButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/laptopdetails/${prevId}|}"> < Perior</a>
+        </div>
+        <div class="nextButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/laptopdetails/${nextId}|}"> > Next</a>
+        </div>
+
+        <h2 th:text="|laptop : ${laptop.brandName}|">laptopdetails</h2>
+
+        <div class="computerinfo">
+
+            <div class="infoLine">
+                <div class="infoLineName">Brand :</div>
+                <div class="infoLineValue" th:text="${laptop.brandName}">brand</div>
+            </div>
+
+            <div class="infoLine">
+                <div class="infoLineName">Model Name :</div>
+                <div class="infoLineValue" th:text="${laptop.modelName}">modelname</div>
+            </div>
+
+            <div class="infoLine">
+                <div class="infoLineName">Color :</div>
+                <div class="infoLineValue" th:text="${laptop.color}">colorname</div>
+            </div>
+
+            <div class="infoLine">
+                <div class="infoLineName">Screen Size :</div>
+                <div class="infoLineValue" th:text="${laptop.screenSize} + ' Inches'">screensize</div>
+            </div>
+
+            <div class="infoLine">
+                <div class="infoLineName">Hard Disc Size :</div>
+                <div class="infoLineValue" th:text="${laptop.hardDis} + ' GB'">harsdisc</div>
+            </div>
+
+            <div class="infoLine">
+                <div class="infoLineName">CPU Model :</div>
+                <div class="infoLineValue" th:text="${laptop.modelCpu}">modelcpu</div>
+            </div>
+
+            <div class="infoLine">
+                <div class="infoLineName">Ram Memory Installed Size :</div>
+                <div class="infoLineValue" th:text="${laptop.ram} + ' GB'">ram</div>
+            </div>
+
+            <div class="infoLine">
+                <div class="infoLineName">Operating System :</div>
+                <div class="infoLineValue" th:text="${laptop.operating}">operating</div>
+            </div>
+
+            <div class="infoLine">
+                <div class="infoLineName">Special Feature :</div>
+                <div class="infoLineValue" th:text="${laptop.feature}">feature</div>
+            </div>
+
+            <div class="infoLine">
+                <div class="infoLineName">Graphics Card Description :</div>
+                <div class="infoLineValue" th:text="${laptop.graphic}">graphic</div>
+            </div>
+
+            <div class="infoLine">
+                <div class="infoLineName">Price :</div>
+                <div class="infoLineValue" th:text=" ' $' + ${laptop.price}">price</div>
+            </div>
+
+            <div class="infoLine">
+                <div class="infoLineNameDescription">About this item :</div>
+                <div class="infoLineValueDescription" th:utext="${laptop.description}">description</div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="containercontent" th:unless="${laptop}">
+        <p>no Laptop was chosen</p>
+    </div>
+</div>
+
+<div th:replace="~{fragments/footer :: footer}">Footer</div>
+
+</body>
+</html>
