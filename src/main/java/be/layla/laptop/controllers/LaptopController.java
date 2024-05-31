@@ -43,4 +43,5 @@ public class LaptopController {
         }
         return "laptopdetails";
     }
+
 }

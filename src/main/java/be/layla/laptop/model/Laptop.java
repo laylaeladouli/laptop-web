@@ -29,8 +29,10 @@ public class Laptop {
     @Lob
     private String description;
 
+
     public Laptop() {
     }
+
 
     public Integer getId() {
         return id;
