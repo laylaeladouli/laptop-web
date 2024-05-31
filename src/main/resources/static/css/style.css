@@ -1,254 +1,192 @@
-/*
-    https://coolors.co/d0cfec-6a8e7f-989572-c6ae82-edc7cf
-SOAP: #D0CFEC;
-AUTOMETALSAURUS: #6A8E7F
-ARTICHOKE: #989572
-LIGHT FRENCH BEIGE: #C6AE82
-CAMEO PINK: #EDC7CF
- */
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
+
 
 /* general styles for html elements */
-
 body {
-    background-color: #D0CFEC;
-    color: #4c6c5d;
+    background-color: whitesmoke;
+    color: black;
     font-family: Bahnschrift, sans-serif;
     margin: 0;
+    padding: 0;
 }
-
-
 h1 {
     margin: 20px 0;
     text-align: center;
-    font-size: 4em;
+    font-size: 3em;
 }
-
 h2 {
     margin: 30px 0;
     font-size: 2em;
+    text-align: center;
 }
 
-p {
-    padding: 10px 50px;
+.container img {
+    width: 100%;
+    height: 500px;
+}
+.containercontent {
+    flex-grow: 4;
+    margin: 0 50px;
+}
+.containercontent p {
+    padding: 100px 50px;
 }
 
-hr {
-    border-color: #EDC7CF;
-    width: 70%;
-    margin: 5px auto;
-}
-
-a {
-    text-decoration: none;
-}
-
-
-/* general layout shared by all pages */
-.nav {
+/* general layout shared by all pages nav + buttons */
+.nav{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 10;
-    background-color: #6A8E7F;
-    color: #EDC7CF;
-    height: 150px;
+    background-color: #CF7C34;
+    color: #523013;
+    height: 70px;
 }
-
-.navbuttons {
-    display: flex;
+.freespaceforheader {
+    margin: 70px 0 20px 0;
 }
-
-.bottom {
-    background-color: #6A8E7F;
-    color: #EDC7CF;
-    height: 30px;
-    font-size: 0.7em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.bottom p {
-    text-align: center;
-}
-
-.row1 {
-    display: flex;
-    position: relative;
-    margin: 100px 0 20px 0;
-    min-height: 500px;
-}
-
-.row1 img {
-    width: 100%;
-    height: auto;
-}
-
-.row1content {
-    flex-grow: 4;
-    margin: 40px 250px 40px 50px;
-}
-
-.row1content ul {
-    padding: 0;
-}
-
-.row1content li {
-    list-style: none;
-}
-
-.filters {
-}
-
-.onefilter {
-    margin: 2px 0;
-    display: flex;
-}
-
-.filtername {
-    width: 4em;
-    padding: 0.2em;
-}
-
-.buttons {
-    flex-grow: 1;
-    position: absolute;
-    top: 10px;
-    right: 50px;
-}
-
-.about {
-    background-color: turquoise;
-}
-
-/* links that do or don't look like buttons */
-a.buttonLook {
-    display: block;
-    background-color: #EDC7CF;
-    color: #6A8E7F;
+.buttonLook {
+    background-color: #CF7C34;
+    color: #523013;
     text-decoration: none;
     text-align: center;
-    box-shadow: 1px 1px 1px darkgrey;
 }
-
-a.buttonLook:hover {
-    background-color: #6A8E7F;
-    color: #EDC7CF;
+.buttonLook a {
+    color: #523013;
+    font-size: 1.5em;
+    margin: 0 15px;
+    text-decoration: none;
 }
-
-a.buttonLook:active {
-    background-color: #6A8E7F;
-    color: #EDC7CF;
+.buttonLook :hover {
+    font-weight: 900;
 }
-
-a.largeButton {
-    width: 200px;
-    font-size: 2em;
-    padding: 1em;
+.buttonLook :active {
+    font-weight: 700;
+    color: #523013;
 }
-
-a.mediumButton {
-    margin: 10px auto;
-    width: 400px;
-    font-size: 1.2em;
-    padding: 1em;
+.navbuttons {
+    display: flex;
+    margin-left: 50px;
 }
-
-a.smallButton {
-    display: block;
-    font-size: 1em;
-    padding: 0.5em;
-}
-
 a.menuButton {
-    margin: 0 10px;
+    margin: 20px 20px;
     width: 6em;
     padding: 0.2em;
 }
 
-a.filterButton {
-    display: inline;
-    margin: 0 2px;
-    width: 2em;
-    padding: 0.2em;
-}
 
-a.activeFilter {
-    background-color: #f3a4b4;
-    color: #2b3e35;
+/*------------------error pagina--------------------------------*/
+.container-error {
+    display: flex;
+    position: relative;
+    margin: 20px 100px;
 }
-
-a.linkLook {
-    background-color: transparent;
-    color: #6A8E7F;
+.containercontent-error {
+    flex-grow: 4;
+    margin: 50px 100px;
 }
-
-a.linkLook:hover {
-    background-color: transparent;
-    color: #989572;
+.p-error{
+    text-align: center;
+    padding: 30px 50px;
 }
 
 
-/* venue page only */
-.venueinfo {
-}
 
+
+
+/* details page only */
+.computerinfo {
+    margin: 30px 0;
+}
 .infoLine {
     margin: 15px 0;
     font-size: 1em;
     display: flex;
 }
-
 .infoLineName {
     width: 13em;
 }
-
 .infoLineValue {
     font-size: 1.2em;
     text-align: left;
+    padding-left: 40px;
+}
+.infoLineNameDescription{
+    width: 33em;
+}
+.infoLineValueDescription{
+    font-size: 1.2em;
+    text-align: left;
+    padding-left: 40px;
 }
 
 .prevButtonDiv {
     position: fixed;
-    left: 10px;
+    left: 1100px;
     top: 160px;
 }
-
 .nextButtonDiv {
     position: fixed;
-    right: 10px;
+    right: 50px;
     top: 160px;
-
 }
 
-/* home page only */
+/* -------------laptop and accessorie pagina [ card]-------------------------*/
 
-.row2 {
-    background-color: #989572;
-    color: #EDC7CF;
-    height: 400px;
-    padding: 60px 0;
-}
-
-.row3 {
-    background-color: #C6AE82;
-    height: 300px;
-    padding: 60px 0;
+.container-laptop h2 {
+    margin: 0;
+    font-size: 2em;
     text-align: center;
 }
 
-
-.pay {
-    background-color: red;
-    color: black;
-    border: blue solid;
-    border-width: 3px;
-    margin-left: 0;
-    margin-top: 10px;
-    padding: 0;
+.row{
+    display: flex;
+    position: relative;
+    margin: 40px 150px;
 }
+.card {
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(82, 48, 19, 0.7);
+}
+.card-img-top {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 200px;
+}
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #523013;
+}
+.card-text {
+    font-size: 1rem;
+    color: #523013;
+}
+
+
+
+/* general styles for footer elements */
+.bottom {
+    position: fixed;
+    background-color: #CF7C34;
+    color: #523013;
+    height: 40px;
+    font-size: 1em;
+    bottom: 0;
+    width: 100%;
+}
+.bottom p {
+    text-align: center;
+    margin: 0;
+    height: 30px;
+}
+
+
+
+
+
+
+
+
