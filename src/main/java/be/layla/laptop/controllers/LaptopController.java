@@ -16,6 +16,13 @@ public class LaptopController {
     @Autowired
     private LaptopRepository laptopRepository;
 
+
+    @GetMapping({"/laptop"})
+    public String laptop (Model model) {
+        model.addAttribute("laptops", laptopRepository.findAll());
+        return "laptop";
+    }
+
     @GetMapping({"/laptopdetails/{id}", "/laptopdetails"})
     public String laptopdetails(Model model, @PathVariable(required = false) Integer id) {
         if (id == null) return "laptopdetails";

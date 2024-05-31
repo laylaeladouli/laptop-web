@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"/>
+    <title>web</title>
+</head>
+<body>
+<div th:replace="~{fragments/header :: header}">Header</div>
+
+<div class="container-laptop mt-4">
+    <h2>Laptops</h2>
+    <div class="row">
+        <div th:each="laptop : ${laptops}" class="col-lg-4 col-md-4 col-sm-12 mb-4">
+            <a th:href="@{|/laptopdetails/${laptop.id}|}" class="buttonlook mediumButton">
+                <div class="card h-100">
+                    <img th:src="@{${laptop.imgUrl}}" class="card-img-top img-fluid" alt="laptops">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${laptop.brandName}"></h5>
+                        <p class="card-text" th:text="${laptop.price}"></p>
+                        <p class="card-text" th:text="${laptop.title}"></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{fragments/footer :: footer}">Footer</div>
+
+</body>
+</html>
