@@ -1,6 +1,7 @@
 
 
 /* general styles for html elements */
+
 body {
     background-color: whitesmoke;
     color: black;
@@ -31,8 +32,10 @@ h2 {
     padding: 100px 50px;
 }
 
-/* general layout shared by all pages nav + buttons */
-.nav{
+
+                      /* general layout shared by all pages nav + buttons */
+
+.navbar{
     position: fixed;
     top: 0;
     left: 0;
@@ -42,40 +45,31 @@ h2 {
     color: #523013;
     height: 70px;
 }
-.freespaceforheader {
-    margin: 70px 0 20px 0;
-}
-.buttonLook {
-    background-color: #CF7C34;
+.nav-link {
     color: #523013;
-    text-decoration: none;
-    text-align: center;
-}
-.buttonLook a {
-    color: #523013;
-    font-size: 1.5em;
+    font-size: 1em;
     margin: 0 15px;
+    text-align: center;
     text-decoration: none;
 }
-.buttonLook :hover {
+.navbar-nav a:hover {
     font-weight: 900;
-}
-.buttonLook :active {
-    font-weight: 700;
     color: #523013;
 }
-.navbuttons {
+.navbar-nav a:active {
+     font-weight: 900;
+     color: #523013;
+     text-decoration: none;
+     padding: 10px 20px;
+ }
+.navbar-collapse {
     display: flex;
     margin-left: 50px;
 }
-a.menuButton {
-    margin: 20px 20px;
-    width: 6em;
-    padding: 0.2em;
-}
 
 
-/*------------------error pagina--------------------------------*/
+                     /*------------------error pagina--------------------------------*/
+
 .container-error {
     display: flex;
     position: relative;
@@ -90,13 +84,50 @@ a.menuButton {
     padding: 30px 50px;
 }
 
-
-
-
-
-/* details page only */
-.computerinfo {
-    margin: 30px 0;
+                                /* ----------------------details page only----------------------- */
+.container-prev-next{
+    padding-top: 150px;
+    position: relative;
+}
+.prevButtonDiv,
+.nextButtonDiv {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.prevButtonDiv {
+     left: 10px;
+ }
+.nextButtonDiv {
+    right: 10px;
+}
+.smallButton {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333333;
+    text-decoration: none;
+}
+.smallButton:hover {
+    background-color: #555555;
+    color: white;
+}
+.prevButton,
+.nextButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.card-body-details {
+    padding-left: 100px;
 }
 .infoLine {
     margin: 15px 0;
@@ -107,38 +138,25 @@ a.menuButton {
     width: 13em;
 }
 .infoLineValue {
-    font-size: 1.2em;
+    font-size: 1em;
     text-align: left;
     padding-left: 40px;
+    width: 25em;
 }
 .infoLineNameDescription{
     width: 33em;
 }
-.infoLineValueDescription{
-    font-size: 1.2em;
-    text-align: left;
-    padding-left: 40px;
-}
 
-.prevButtonDiv {
-    position: fixed;
-    left: 1100px;
-    top: 160px;
-}
-.nextButtonDiv {
-    position: fixed;
-    right: 50px;
-    top: 160px;
-}
 
-/* -------------laptop and accessorie pagina [ card]-------------------------*/
-
+                     /* -------------laptop and accessorie pagina [ card]-------------------------*/
+.container-laptop {
+    padding-top: 150px;
+}
 .container-laptop h2 {
     margin: 0;
     font-size: 2em;
     text-align: center;
 }
-
 .row{
     display: flex;
     position: relative;
@@ -154,6 +172,7 @@ a.menuButton {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     height: 200px;
+    padding: 15px;
 }
 .card-title {
     font-size: 1.5rem;
@@ -164,10 +183,12 @@ a.menuButton {
     font-size: 1rem;
     color: #523013;
 }
+a {
+    text-decoration: none; /* Add this line to remove underline from links */
+}
 
 
-
-/* general styles for footer elements */
+                   /* general styles for footer elements */
 .bottom {
     position: fixed;
     background-color: #CF7C34;
@@ -180,7 +201,8 @@ a.menuButton {
 .bottom p {
     text-align: center;
     margin: 0;
-    height: 30px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 

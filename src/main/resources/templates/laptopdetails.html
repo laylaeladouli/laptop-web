@@ -2,8 +2,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" rel="stylesheet"/>    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"/>
 
@@ -13,89 +13,107 @@
 <body>
 <div th:replace="~{fragments/header :: header}">Header</div>
 
-<div class="container">
-    <div class="containercontent" th:if="${laptop}">
-        <div class="prevButtonDiv">
-            <a class="buttonLook smallButton" th:href="@{|/laptopdetails/${prevId}|}"> < Perior</a>
-        </div>
-        <div class="nextButtonDiv">
-            <a class="buttonLook smallButton" th:href="@{|/laptopdetails/${nextId}|}"> > Next</a>
-        </div>
 
-        <h2 th:text="|laptop : ${laptop.brandName}|">laptopdetails</h2>
-
-        <div class="computerinfo">
-
-            <div class="infoLine">
-                <div class="infoLineName">Brand :</div>
-                <div class="infoLineValue" th:text="${laptop.brandName}">brand</div>
-            </div>
-
-            <div class="infoLine">
-                <div class="infoLineName">Model Name :</div>
-                <div class="infoLineValue" th:text="${laptop.modelName}">modelname</div>
-            </div>
-
-            <div class="infoLine">
-                <div class="infoLineName">Color :</div>
-                <div class="infoLineValue" th:text="${laptop.color}">colorname</div>
-            </div>
-
-            <div class="infoLine">
-                <div class="infoLineName">Screen Size :</div>
-                <div class="infoLineValue" th:text="${laptop.screenSize} + ' Inches'">screensize</div>
-            </div>
-
-            <div class="infoLine">
-                <div class="infoLineName">Hard Disc Size :</div>
-                <div class="infoLineValue" th:text="${laptop.hardDis} + ' GB'">harsdisc</div>
-            </div>
-
-            <div class="infoLine">
-                <div class="infoLineName">CPU Model :</div>
-                <div class="infoLineValue" th:text="${laptop.modelCpu}">modelcpu</div>
-            </div>
-
-            <div class="infoLine">
-                <div class="infoLineName">Ram Memory Installed Size :</div>
-                <div class="infoLineValue" th:text="${laptop.ram} + ' GB'">ram</div>
-            </div>
-
-            <div class="infoLine">
-                <div class="infoLineName">Operating System :</div>
-                <div class="infoLineValue" th:text="${laptop.operating}">operating</div>
-            </div>
-
-            <div class="infoLine">
-                <div class="infoLineName">Special Feature :</div>
-                <div class="infoLineValue" th:text="${laptop.feature}">feature</div>
-            </div>
-
-            <div class="infoLine">
-                <div class="infoLineName">Graphics Card Description :</div>
-                <div class="infoLineValue" th:text="${laptop.graphic}">graphic</div>
-            </div>
-
-            <div class="infoLine">
-                <div class="infoLineName">Price :</div>
-                <div class="infoLineValue" th:text=" ' $' + ${laptop.price}">price</div>
-            </div>
-
-            <div class="infoLine">
-                <div class="infoLineNameDescription">About this item :</div>
-                <div class="infoLineValueDescription" th:utext="${laptop.description}">description</div>
-            </div>
-
-        </div>
-
-
+<div class="container-prev-next">
+    <div class="prevButtonDiv" th:if="${laptop}">
+        <a class="buttonLook smallButton prevButton" th:href="@{|/laptopdetails/${prevId}|}">Previous</a>
     </div>
-    <div class="containercontent" th:unless="${laptop}">
-        <p>no Laptop was chosen</p>
+
+    <div class="nextButtonDiv" th:if="${laptop}">
+        <a class="buttonLook smallButton nextButton" th:href="@{|/laptopdetails/${nextId}|}">Next</a>
+    </div>
+
+
+</div>
+
+<h2 class="my-2" th:text="|laptop : ${laptop.brandName}|" >laptopdetails</h2>
+
+<div class="container-details">
+    <div class="row justify-content-center">
+        <div class="card mb-3">
+             <div class="row g-0">
+             <div class="col-md-4 my-auto">
+            <img th:src="@{${laptop.imgUrl}}" class="img-fluid " alt="...">
+             </div>
+            <div class="col-md-8">
+            <div class="card-body-details">
+
+                <div class="infoLine">
+                    <div class="infoLineName">Model Name :</div>
+                    <div class="infoLineValue" th:text="${laptop.modelName}">modelname</div>
+                </div>
+
+                <div class="infoLine">
+                    <div class="infoLineName">Color :</div>
+                    <div class="infoLineValue" th:text="${laptop.color}">colorname</div>
+                </div>
+
+                <div class="infoLine">
+                    <div class="infoLineName">Screen Size :</div>
+                    <div class="infoLineValue" th:text="${laptop.screenSize} + ' Inches'">screensize</div>
+                </div>
+
+                <div class="infoLine">
+                    <div class="infoLineName">Hard Disc Size :</div>
+                    <div class="infoLineValue" th:text="${laptop.hardDis} + ' GB'">harsdisc</div>
+                </div>
+
+                <div class="infoLine">
+                    <div class="infoLineName">CPU Model :</div>
+                    <div class="infoLineValue" th:text="${laptop.modelCpu}">modelcpu</div>
+                </div>
+
+                <div class="infoLine">
+                    <div class="infoLineName">Ram Memory :</div>
+                    <div class="infoLineValue" th:text="${laptop.ram} + ' GB'">ram</div>
+                </div>
+
+                <div class="infoLine">
+                    <div class="infoLineName">Operating System :</div>
+                    <div class="infoLineValue" th:text="${laptop.operating}">operating</div>
+                </div>
+
+                <div class="infoLine">
+                    <div class="infoLineName">Special Feature :</div>
+                    <div class="infoLineValue" th:text="${laptop.feature}">feature</div>
+                </div>
+
+                <div class="infoLine">
+                    <div class="infoLineName">Graphics Card :</div>
+                    <div class="infoLineValue" th:text="${laptop.graphic}">graphic</div>
+                </div>
+
+                <div class="infoLine">
+                    <div class="infoLineName">Price :</div>
+                    <div class="infoLineValue" th:text=" ' € ' + ${laptop.price}">price</div>
+                </div>
+
+            </div>
+            </div>
+                 <div class="col-md-12">
+                     <div class="infoLine">
+                         <p><strong>About this item :</strong><br>
+                             <span th:utext="${laptop.description}"></span>
+                         </p>
+                     </div>
+
+                 </div>
+            </div>
+        </div>
     </div>
 </div>
 
+
+    <div class="containercontent" th:unless="${laptop}">
+        <p>no Laptop was chosen</p>
+    </div>
+
+
 <div th:replace="~{fragments/footer :: footer}">Footer</div>
+
+<script crossorigin="anonymous"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
