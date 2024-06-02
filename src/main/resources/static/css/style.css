@@ -20,10 +20,16 @@ h2 {
     text-align: center;
 }
 
+
+                    /*---------------------------- Home page _____________________________*/
 .container img {
     width: 100%;
     height: 500px;
 }
+
+
+
+                     /*-------------------------[no Accessorie was found]---------------------*/
 .containercontent {
     flex-grow: 4;
     margin: 0 50px;
@@ -73,7 +79,7 @@ h2 {
 .container-error {
     display: flex;
     position: relative;
-    margin: 20px 100px;
+    margin: 150px 100px;
 }
 .containercontent-error {
     flex-grow: 4;
