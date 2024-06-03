@@ -154,6 +154,7 @@ h2 {
     padding-top: 150px;
     position: relative;
 }
+
 .prevButtonDiv,
 .nextButtonDiv {
     position: fixed;
@@ -191,6 +192,9 @@ h2 {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
+.card {
+    width: 80%;
+}
 .card-body-details {
     padding-left: 100px;
 }
@@ -215,7 +219,7 @@ h2 {
 
                      /* -------------laptop and accessorie pagina [ card]-------------------------*/
 .container-laptop {
-    padding-top: 150px;
+    padding-top: 20px;
 }
 .container-laptop h2 {
     margin: 0;
@@ -225,9 +229,9 @@ h2 {
 .row{
     display: flex;
     position: relative;
-    margin: 40px 150px;
+    margin: 40px 60px;
 }
-.card {
+.card-laptop {
     margin-bottom: 20px;
     border: none;
     border-radius: 20px;
@@ -238,6 +242,9 @@ h2 {
     border-top-right-radius: 20px;
     height: 200px;
     padding: 15px;
+}
+.card-body {
+    padding: 20px;
 }
 .card-title {
     font-size: 1.5rem;
@@ -251,6 +258,22 @@ h2 {
 a {
     text-decoration: none; /* Add this line to remove underline from links */
 }
+
+.filter-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.filter-section .btn {
+    margin-top: 120px;
+}
+
+#filterForm {
+    margin-top: 20px;
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+}
+
 
 
                    /* general styles for footer elements */

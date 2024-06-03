@@ -23,7 +23,7 @@ public class Laptop {
     private String operating;
     private String feature;
     private String graphic;
-    private BigDecimal price;
+    private double price;
     private String imgUrl;
     private String linkWeb;
     @Lob
@@ -130,11 +130,11 @@ public class Laptop {
         this.graphic = graphic;
     }
 
-    public BigDecimal getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

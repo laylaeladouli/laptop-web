@@ -11,12 +11,70 @@
 <body>
 <div th:replace="~{fragments/header :: header}">Header</div>
 
+<div class="container">
+    <div class="filter-section">
+       <div th:unless="${showFilters}">
+    <a class="filters" th:href="@{/laptop/filter}">
+        <button type="submit" class="btn btn-3d">Filter</button>
+    </a>
+</div>
+
+
+<div th:if="${showFilters}">
+    <a class="filters" th:href="@{/laptop}">
+        <button type="submit" class="btn btn-3d"> - </button>
+    </a>
+
+
+        <form class="mt-3">
+            <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="brandName">Brand Name :</label>
+                <select id="brandName" name="brandName" class="form-control">
+                    <option value="all" th:selected="${brandName == null || brandName == 'all'}">all categories</option>
+                    <option value="acer" th:selected="${brandName == 'acer'}">acer</option>
+                    <option value="ASUS" th:selected="${brandName == 'ASUS'}">ASUS</option>
+                    <option value="HP" th:selected="${brandName == 'HP'}">HP</option>
+                    <option value="BHWW" th:selected="${brandName == 'BHWW'}">BHWW</option>
+                    <option value="ACEMAGIC" th:selected="${brandName == 'ACEMAGIC'}">ACEMAGIC</option>
+                    <option value="jumper" th:selected="${brandName == 'jumper'}">jumper</option>
+                    <option value="Lenova" th:selected="${brandName == 'Lenova'}">Lenova</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="priceRange">Price : </label>
+                <select id="priceRange" name="priceRange" class="form-control">
+                    <option value="" th:selected="${priceRange == null}">all price</option>
+                    <option value="less" th:selected="${priceRange == 'less'}">Less than € 50</option>
+                    <option value="more" th:selected="${priceRange == 'more'}">More than € 50</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="ramRange">Ram :</label>
+                <select id="ramRange" name="ramRange" class="form-control">
+                    <option value="" th:selected="${ramRange == null}">all ram</option>
+                    <option value="less" th:selected="${ramRange == 'less'}">Less than 16GB</option>
+                    <option value="more" th:selected="${ramRange == 'more'}">More than 16GB</option>
+                </select>
+            </div>
+            </div>
+            <button type="submit" class="btn btn-3d mt-2">Apply Filters</button>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
 <div class="container-laptop">
     <h2>Laptops</h2>
     <div class="row">
         <div th:each="laptop : ${laptops}" class="col-lg-4 col-md-4 col-sm-12 mb-4">
-            <a th:href="@{|/laptopdetails/${laptop.id}|}" class="buttonlook mediumButton">
-                <div class="card h-100">
+            <a th:href="@{|/laptopdetails/${laptop.id}|}" class="buttonlook mediumButton justify-content-center">
+                <div class="card-laptop h-100">
                     <img th:src="@{${laptop.imgUrl}}" class="card-img-top img-fluid" alt="laptops">
                     <div class="card-body">
                         <h5 class="card-title" th:text="${laptop.brandName}"></h5>
@@ -28,6 +86,8 @@
         </div>
     </div>
 </div>
+</div>
+
 
 <div th:replace="~{fragments/footer :: footer}">Footer</div>
 
