@@ -16,7 +16,7 @@ public class Accessorie {
     private String productName;
     private String color;
     private String feature;
-    private BigDecimal price;
+    private Double price;
     private String imgUrl;
     @Lob
     private String description;
@@ -74,11 +74,11 @@ public class Accessorie {
         this.feature = feature;
     }
 
-    public BigDecimal getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
