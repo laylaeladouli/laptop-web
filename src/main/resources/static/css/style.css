@@ -205,6 +205,7 @@ h2 {
 }
 .infoLineName {
     width: 13em;
+    font-weight: bold;
 }
 .infoLineValue {
     font-size: 1em;
@@ -214,6 +215,14 @@ h2 {
 }
 .infoLineNameDescription{
     width: 33em;
+}
+
+
+/*-----------------------------order details----------------------*/
+
+.h2-order{
+    margin-top: 130px;
+    margin-left: 0;
 }
 
 
@@ -275,8 +284,7 @@ a {
 }
 
 
-
-                   /* general styles for footer elements */
+/*--------------- general styles for footer elements----------- */
 .bottom {
     position: fixed;
     background-color: #CF7C34;
