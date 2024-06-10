@@ -3,8 +3,9 @@ package be.layla.laptop.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import jakarta.persistence.OneToMany;
 
-import java.math.BigDecimal;
+import java.util.Collection;
 
 
 @Entity
@@ -29,6 +30,18 @@ public class Laptop {
     @Lob
     private String description;
 
+
+    @OneToMany(mappedBy = "laptop")
+    private Collection<Customerorder> customerorders;
+
+
+    public Collection<Customerorder> getCustomerorders() {
+        return customerorders;
+    }
+
+    public void setCustomerorders(Collection<Customerorder> customerorders) {
+        this.customerorders = customerorders;
+    }
 
     public Laptop() {
     }
