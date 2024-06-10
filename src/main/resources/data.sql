@@ -128,6 +128,22 @@ VALUES (1, 'White Rose Bag', 'canvaslife', 'Laptop Case', 'White rose', 'Waterpr
 
 
 
+INSERT INTO CUSTOMERORDER (ID, PAYMENT_METHODE, LAPTOP_ID)
+VALUES (1, 'Visa', 1 ),
+       (2, 'Cash', 2),
+       (3, 'Visa', 3),
+       (4, 'PayPal', 4),
+       (5, 'PayPal', 5),
+       (6, 'Cash', 6),
+       (7, 'PayPal', 7),
+       (8, 'Cash', 8),
+       (9, 'Visa', 9),
+       (10, 'Cash', 10),
+       (11, 'PayPal', 11),
+       (12, 'Visa', 12);
+
+
+
 
 
 
