@@ -151,7 +151,7 @@ h2 {
 
                       /* ----------------------details page only----------------------- */
 .container-prev-next{
-    padding-top: 150px;
+    padding-top: 120px;
     position: relative;
 }
 
@@ -226,7 +226,7 @@ h2 {
 }
 
 
-                     /* -------------laptop and accessorie pagina [ card]-------------------------*/
+/* -------------laptop and accessorie pagina [ card]-------------------------*/
 .container-laptop {
     padding-top: 20px;
 }
@@ -265,7 +265,7 @@ h2 {
     color: #523013;
 }
 a {
-    text-decoration: none; /* Add this line to remove underline from links */
+    text-decoration: none;
 }
 
 .filter-section {
@@ -281,6 +281,30 @@ a {
     text-align: left;
     display: inline-block;
     width: 100%;
+}
+
+
+/*------------------------laptopedit----------------------*/
+
+.buttonlink-edit{
+
+    margin-top: 80px;
+    margin-left: 50px;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    border:1px solid #523013 ;
+    border-radius: 5px;
+    color: #523013;
+}
+.buttonlink-edit:hover {
+    font-weight: 900;
+    color: #523013;
+}
+
+.buttonlink-edit:active {
+    font-weight: 900;
+    color: #523013;
 }
 
 
