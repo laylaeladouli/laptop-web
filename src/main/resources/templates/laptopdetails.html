@@ -15,6 +15,10 @@
 <div th:replace="~{fragments/header :: header}">Header</div>
 
 
+
+
+
+
 <div class="container-prev-next">
     <div class="prevButtonDiv" th:if="${laptop}">
         <a class="buttonLook smallButton prevButton" th:href="@{|/laptopdetails/${prevId}|}">Previous</a>
@@ -103,7 +107,11 @@
 
 
                  <div >
-                     <a class="buttonLook smallButton" th:href="@{'/orderlaptopdetails/' + ${laptop.getId()}}">Buy now</a>
+                     <a class="buttonLook smallButton" th:href="@{|/orderlaptopdetails/ ${laptop.getId()}|}">Buy now</a>
+                 </div>
+
+                 <div class="my-5">
+                     <button class="buttonLook mediumButton" type="button">Orders: <span th:text="${orderCount}">0</span></button>
                  </div>
 
             </div>

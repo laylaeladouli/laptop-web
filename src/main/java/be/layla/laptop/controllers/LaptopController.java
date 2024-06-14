@@ -47,9 +47,13 @@ public class LaptopController {
             if (nextLaptopFromDb.isEmpty())
                 nextLaptopFromDb = laptopRepository.findFirstByOrderByIdAsc();
 
-            model.addAttribute("laptop", laptopFromDb.get());
+            Laptop laptop = laptopFromDb.get();
+            model.addAttribute("laptop", laptop);
             model.addAttribute("prevId", prevLaptopFromDb.get().getId());
             model.addAttribute("nextId", nextLaptopFromDb.get().getId());
+            model.addAttribute("orderCount", laptop.getOrderCount());
+        }else {
+            model.addAttribute("orderCount", 0);
         }
         return "laptopdetails";
     }
