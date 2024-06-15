@@ -1,9 +1,6 @@
 package be.layla.laptop.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.Collection;
 
@@ -11,6 +8,7 @@ import java.util.Collection;
 @Entity
 public class Laptop {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Integer id;
     private String title;
@@ -33,7 +31,6 @@ public class Laptop {
 
     @OneToMany(mappedBy = "laptop")
     private Collection<Customerorder> customerorders;
-
 
     public Collection<Customerorder> getCustomerorders() {
         return customerorders;
@@ -95,7 +92,7 @@ public class Laptop {
         this.screenSize = screenSize;
     }
 
-    public double getHardDis() {
+    public int getHardDis() {
         return hardDis;
     }
 
@@ -174,4 +171,11 @@ public class Laptop {
     public void setLinkWeb(String linkWeb) {
         this.linkWeb = linkWeb;
     }
+
+
+    public Integer getOrderCount() {
+        return customerorders != null ? customerorders.size() : 0;
+    }
+
+
 }
