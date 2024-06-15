@@ -8,11 +8,11 @@
         <version>3.2.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>be.thomasmore</groupId>
-    <artifactId>web</artifactId>
+    <groupId>be.layla</groupId>
+    <artifactId>laptop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>party</name>
-    <description>party</description>
+    <name>laptop</name>
+    <description>laptop</description>
     <properties>
         <java.version>17</java.version>
     </properties>

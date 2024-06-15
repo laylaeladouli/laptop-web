@@ -67,16 +67,13 @@ public class LaptopAdminController {
 
 
     @PostMapping("/laptopnew")
-    public String laptopNewPost(Laptop laptop) {
+    public String laptopNewPost(Model model,
+                                @ModelAttribute("laptop") @Valid Laptop laptop,
+                                BindingResult bindingResult
+                                ) {
         logger.info("laptopNewPost -- new name=" + laptop.getBrandName());
         laptopRepository.save(laptop);
         return "redirect:/admin/laptopdetails";
     }
-
-
-
-
-
-
 
 }

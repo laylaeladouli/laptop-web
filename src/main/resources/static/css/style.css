@@ -314,6 +314,14 @@ a {
     color: #523013;
 }
 
+.error {
+    color: #760202;
+    font-size: larger;
+}
+.fieldError, input.fieldError {
+    background-color: #760202;
+}
+
 
 /*--------------- general styles for footer elements----------- */
 .bottom {

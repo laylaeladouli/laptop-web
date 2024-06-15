@@ -23,7 +23,8 @@
                     <form th:action="@{|/admin/laptopnew|}" method="post" th:object="${laptop}">
                         <div class="form-group">
                             <label for="brandName">Brand name :</label>
-                            <input id="brandName" th:field="*{brandName}" class="form-control" th:value="${laptop.brandName}">
+                            <input id="brandName" th:field="*{brandName}" class="form-control" th:errorclass="fieldError" th:value="${laptop.brandName}">
+                            <div class="error" th:if="${#fields.hasErrors('*')}"></div>
                         </div>
 
                         <div class="form-group">

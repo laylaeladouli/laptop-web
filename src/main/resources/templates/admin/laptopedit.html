@@ -20,12 +20,12 @@
         <div class="card-body">
             <div th:if="${laptop}" th:object="${laptop}">
             <h2 class="my-2" th:text="${laptop.brandName}"></h2>
-
+            <div class="error" th:if="${#fields.hasErrors('*')}">ERROR  -  data is not saved </div>
 
             <form th:action="@{|/admin/laptopedit/${laptop.id}|}" method="post" th:object="${laptop}">
                 <div class="form-group">
         <label for="brandName">Brand name :</label>
-        <select id="brandName" th:field="*{brandName}" class="form-control" th:value="${laptop.brandName}">
+        <select id="brandName" th:field="*{brandName}" class="form-control" th:errorclass="fieldError" th:value="${laptop.brandName}">
         <option th:each="l : ${laptops}" th:selected="*{brandName}" th:value="${l.id}" th:text="${l.brandName}"></option>
         </select>
                 </div>
