@@ -1,6 +1,7 @@
 package be.layla.laptop.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.Collection;
 
@@ -12,6 +13,7 @@ public class Laptop {
     @Id
     private Integer id;
     private String title;
+    @NotBlank
     private String brandName;
     private String modelName;
     private String color;
