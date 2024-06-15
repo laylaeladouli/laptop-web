@@ -1,18 +1,19 @@
 package be.layla.laptop.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 
-import java.math.BigDecimal;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Accessorie {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Integer id;
     private String title;
+    @NotBlank
     private String brandName;
+    @NotBlank
     private String productName;
     private String color;
     private String feature;
@@ -20,6 +21,7 @@ public class Accessorie {
     private String imgUrl;
     @Lob
     private String description;
+
 
 
     public Accessorie() {
@@ -97,5 +99,6 @@ public class Accessorie {
     public void setDescription(String description) {
         this.description = description;
     }
+
 
 }
