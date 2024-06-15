@@ -286,8 +286,15 @@ a {
 
 /*------------------------laptopedit----------------------*/
 
-.buttonlink-edit{
+.container-details-edit{
+    margin-top: 150px;
+    margin-bottom: 110px;
+}
+.form-group{
+    padding: 10px;
+}
 
+.buttonlink-edit{
     margin-top: 80px;
     margin-left: 50px;
     display: inline-block;
