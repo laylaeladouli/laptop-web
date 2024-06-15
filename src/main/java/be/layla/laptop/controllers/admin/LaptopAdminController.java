@@ -72,6 +72,10 @@ public class LaptopAdminController {
                                 BindingResult bindingResult
                                 ) {
         logger.info("laptopNewPost -- new name=" + laptop.getBrandName());
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("laptop", laptop);
+            return "admin/laptopnew";
+        }
         laptopRepository.save(laptop);
         return "redirect:/admin/laptopdetails";
     }
