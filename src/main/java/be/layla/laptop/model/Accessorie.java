@@ -11,7 +11,6 @@ public class Accessorie {
     @Id
     private Integer id;
     private String title;
-    @NotBlank
     private String brandName;
     @NotBlank
     private String productName;
