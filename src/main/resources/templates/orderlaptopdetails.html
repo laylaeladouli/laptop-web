@@ -1,7 +1,4 @@
-
-
-
-<h2 class="h2-order"><strong>Order Details</strong></h2><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
@@ -16,6 +13,8 @@
 </head>
 <body>
 <div th:replace="~{fragments/header :: header}">Header</div>
+
+<h2 class="h2-order"><strong>Order Details</strong></h2>
 
 <div class="row justify-content-center">
 
@@ -45,7 +44,13 @@
 
         <div class="infoLine">
             <div class="infoLineName">Payment Methode : </div>
-            <div class="infoLineValue" th:text="${customerorder.paymentMethode}">payment</div>
+            <div class="infoLineValue" th:text="${customerorder.paymentMethod}">payment</div>
+        </div>
+
+
+        <div class="infoLine">
+            <div class="infoLineName">Name of customer : </div>
+            <div class="infoLineValue" th:text="${customerorder.customer.name}">payment</div>
         </div>
 
 

@@ -1,6 +1,8 @@
 package be.layla.laptop.controllers;
 
+
 import be.layla.laptop.model.Customerorder;
+import be.layla.laptop.model.Accessorie;
 import be.layla.laptop.repositories.CustomerorderRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,8 +45,23 @@ public class CustomerorderController {
 
 
 
+     @GetMapping({"/orderaccessoriedetails/{id}", "/orderaccessoriedetails"})
+    public String orderaccessoriedetails(Model model, @PathVariable(required = false) Integer id) {
+        if (id == null) return "orderaccessoriedetails";
 
+        Optional<Customerorder> customerorderFromDb = customerorderRepository.findById(id);
 
+        if (customerorderFromDb.isPresent()) {
+            Customerorder customerorder = customerorderFromDb.get();
+            double shippingCost = 10.0;
+            double totalPrice = customerorder.getLaptop().getPrice() + shippingCost;
+            model.addAttribute("customerorders", customerorderFromDb.get());
+            model.addAttribute("shippingCost", shippingCost);
+            model.addAttribute("totalPrice", totalPrice);
+
+        }
+        return "orderaccessoriedetails";
+    }
 
 
 }

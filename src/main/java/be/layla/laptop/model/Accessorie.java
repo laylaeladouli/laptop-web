@@ -22,10 +22,12 @@ public class Accessorie {
     private String description;
 
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Customerorder customerorder;
+
 
     public Accessorie() {
     }
-
 
     public Integer getId() {
         return id;
@@ -100,4 +102,11 @@ public class Accessorie {
     }
 
 
+    public Customerorder getCustomerorder() {
+        return customerorder;
+    }
+
+    public void setCustomerorder(Customerorder customerorder) {
+        this.customerorder = customerorder;
+    }
 }
