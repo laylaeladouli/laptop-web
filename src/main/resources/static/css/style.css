@@ -151,7 +151,7 @@ h2 {
 
                       /* ----------------------details page only----------------------- */
 .container-prev-next{
-    padding-top: 120px;
+    padding-top: 60px;
     position: relative;
 }
 
@@ -340,6 +340,11 @@ a {
     padding-bottom: 7px;
 }
 
+
+/*--------------------login--------------------*/
+.container-login{
+    margin-top: 150px;
+}
 
 
 
